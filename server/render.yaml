@@ -3,13 +3,13 @@ services:
     name: strapi
     env: node
     plan: starter
-    buildCommand: npm install && npm build
-    startCommand: rsync -a public/ D:\sqlite_data && npm start
+    buildCommand: yarn install && yarn build
+    startCommand: rsync -a public/ /d/sqlite_data/ && yarn start
     healthCheckPath: /_health
     autoDeploy: false
     disk:
       name: strapi-data
-      mountPath: /data
+      mountPath: /d
       sizeGB: 1
     envVars:
       - key: NODE_VERSION
@@ -17,7 +17,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: DATABASE_FILENAME
-        value: /data/strapi.db
+        value: /d/sqlite_data/strapi.db
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_JWT_SECRET
