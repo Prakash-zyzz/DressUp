@@ -1,6 +1,8 @@
 module.exports = ({ env }) => ({
     url: env("RENDER_EXTERNAL_URL"),
-    dirs: {
-      public: "D:\sqlite_data"
+    database: {
+        connection: {
+            filename: 'D:/sqlite_folder/data.db', // Adjust the path and database name as needed
+        },
     },
-  });
+});
