@@ -4,7 +4,7 @@ services:
     env: node
     plan: starter
     buildCommand: npm install && npm build
-    startCommand: rsync -a filename/ /D:/data/public/  && npm start
+    startCommand: rsync -a /data/public/ D:/data/public/ && npm start
     healthCheckPath: /_health
     autoDeploy: false
     disk:
@@ -13,11 +13,11 @@ services:
       sizeGB: 1
     envVars:
       - key: NODE_VERSION
-        value: ~20.11.0
+        value: "20.11.0"
       - key: NODE_ENV
         value: production
       - key: DATABASE_FILENAME
-        value: /data/strapi.db
+        value: "/data/strapi.db"
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_JWT_SECRET
