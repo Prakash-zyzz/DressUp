@@ -1,6 +1,7 @@
 module.exports = ({ env }) => ({
-    url: env("https://dressup-8pk8.onrender.com/"),
-    dirs: {
-        public: "D:/data/public"
+    url: env("RENDER_EXTERNAL_URL"),
+    database: {
+        connection: {
+            filename:  "D:/data/public", // Adjust the path and database name as needed
+        },
     },
-});
